@@ -33,7 +33,7 @@ void printArray(const char *arr) {
 void enterSizeKWord(int *k) {
     printf("enter minimum size of word:\n");
 
-    while (scanf_s("%d", k) != 1 || getchar() != '\n' || *k < 0) {
+    while (scanf("%d", k) != 1 || getchar() != '\n' || *k < 0) {
         printf("input error try again\n");
         rewind(stdin);
     }
@@ -44,7 +44,7 @@ void erase(char **arr, int *size, int pos, int length) {
         (*arr)[i] = (*arr)[i + length];
     }
     (*size) -= length;
-    *arr = (char *) realloc(*arr, *size * sizeof(char));
+    *arr = (char* ) realloc(*arr, (*size+1) * sizeof(char));
     (*arr)[*size] = '\0';
 }
 void preprocessString(char **arr, int *size) {

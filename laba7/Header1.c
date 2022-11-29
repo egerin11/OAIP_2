@@ -33,7 +33,7 @@ void erase1(char **arr, int *size, int pos, int length) {
         (*arr)[i] = (*arr)[i + length];
     }
     (*size) -= length;
-    *arr = (char *) realloc(*arr, *size * sizeof(char));
+    *arr = (char *) realloc(*arr, (*size+1) * sizeof(char));
     (*arr)[*size] = '\0';
 }
 int strLen(const char *arr)
@@ -55,8 +55,8 @@ for(int i=0;i<*size;i++) {
                 j++;
         }
         if (!f) {
-            erase(arr, size, i, strLen(string));
-            printf("hui1");
+            erase1(arr, size, i, strLen(string));
+
             break;
         }
 

@@ -6,7 +6,7 @@ int main() {
 
     do {
         printf(" Choose the task 1 - 2 \nfor exit input 3\n");
-        while (scanf("%d", &a) != 1 || getchar() != '\n' || a < 1 || a > 2) {
+        while (scanf("%d", &a) != 1 || getchar() != '\n' || a < 1 || a > 3) {
             printf("input error try again\n");
             rewind(stdin);
         }

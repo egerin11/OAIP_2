@@ -1,4 +1,0 @@
-C:/OAIP_2/Laba7/cmake-build-debug/CMakeFiles/Laba7.dir
-C:/OAIP_2/Laba7/cmake-build-debug/CMakeFiles/OAIP_2.dir
-C:/OAIP_2/Laba7/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/OAIP_2/Laba7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

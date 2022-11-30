@@ -11,7 +11,7 @@ int main() {
             rewind(stdin);
         }
         void (*p[2])() ={Task1, Task2};
-        ((*p[a - 1])());
+        if(a<3) ((*p[a - 1])());
 
     }while(a!=3);
 

@@ -1,41 +1,4 @@
-#include <stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
 
-void getString1(char **string, int *size) {
-    *size = 0;
-    int realSize = 16;
-    *string = (char *) malloc(realSize * sizeof(char));
-    rewind(stdin);
-    char check;
-    while (true) {
-        check = getchar();
-        if (check == '\n') {
-            (*string)[*size] = '\0';
-            return;
-        }
-        (*string)[*size] = check;
-        (*size)++;
-        if (*size + 1 == realSize) {
-            realSize *= 2;
-            *string = (char *) realloc(*string, realSize * sizeof(char));
-        }
-    }
-
-}
-void printArray1(const char *arr) {
-    printf("array:\n");
-    printf("%s", arr);
-    printf("\n");
-}
-void erase1(char **arr, int *size, int pos, int length) {
-    for (int i = pos; i < *size - length; i++) {
-        (*arr)[i] = (*arr)[i + length];
-    }
-    (*size) -= length;
-    *arr = (char *) realloc(*arr, (*size+1) * sizeof(char));
-    (*arr)[*size] = '\0';
-}
 int strLen(const char *arr)
 {
     int i=0;
@@ -55,7 +18,7 @@ for(int i=0;i<*size;i++) {
                 j++;
         }
         if (!f) {
-            erase1(arr, size, i, strLen(string));
+            erase(arr, size, i, strLen(string));
 
             break;
         }

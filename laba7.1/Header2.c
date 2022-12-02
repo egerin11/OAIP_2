@@ -1,5 +1,4 @@
 #include"Header.h"
-#include"Header1.h"
 #include<stdio.h>
 void Task1()
 {
@@ -18,8 +17,8 @@ void Task1()
      int size, size1;
      char *arr,*string;
      printf("fill array\n");
-     getString1(&arr, &size);
-     getString1(&string, &size1);
+     getString(&arr, &size);
+     getString(&string, &size1);
      findSameString(&arr,string,&size);
-     printArray1(arr);
+     printArray(arr);
  }

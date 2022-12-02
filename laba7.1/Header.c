@@ -6,7 +6,6 @@ void getString(char **string, int *size) {
     int realSize = 16;
     *string = (char *) malloc(realSize * sizeof(char));
     rewind(stdin);
-
     char check;
     while (true) {
         check = getchar();
@@ -17,8 +16,9 @@ void getString(char **string, int *size) {
 
         (*string)[*size] = check;
         (*size)++;
-
-        if (*size + 1 == realSize) {
+        if(*size<realSize)
+            *string = (char *) realloc(*string, *size * sizeof(char));
+        else if (*size + 1 == realSize) {
             realSize *= 2;
             *string = (char *) realloc(*string, realSize * sizeof(char));
         }
@@ -40,9 +40,8 @@ void enterSizeKWord(int *k) {
 }
 
 void erase(char **arr, int *size, int pos, int length) {
-    for (int i = pos; i < *size - length; i++) {
+    for (int i = pos; i < *size - length; i++)
         (*arr)[i] = (*arr)[i + length];
-    }
     (*size) -= length;
     *arr = (char* ) realloc(*arr, (*size+1) * sizeof(char));
     (*arr)[*size] = '\0';
@@ -71,6 +70,7 @@ void preprocessString(char **arr, int *size) {
         }
     }
 }
+
 void processWord(char **arr, int *size, const int k) {
     preprocessString(arr, size);
 
